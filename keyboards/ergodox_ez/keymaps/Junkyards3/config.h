@@ -1,2 +1,3 @@
 #define PERMISSIVE_HOLD
 #define QUICK_TAP_TERM_PER_KEY
+#define CHORDAL_HOLD
