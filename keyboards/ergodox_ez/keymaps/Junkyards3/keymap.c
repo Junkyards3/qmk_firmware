@@ -38,13 +38,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [0] = LAYOUT_ergodox_pretty(
   KC_NO,         KC_1,         KC_2,         KC_3,         KC_4,         KC_5,      KC_NO,      KC_NO  , KC_6         , KC_7         , KC_8        , KC_9        , KC_0           , TG(5)  ,
   TG(6),         KC_Q,         KC_W,         KC_E,         KC_R,         KC_T, RALT(KC_0),      KC_ENT , KC_Y         , KC_U         , KC_I        , KC_O        , KC_P           , KC_LBRC,
- KC_ESC, LGUI_T(KC_A), LALT_T(KC_S), LSFT_T(KC_D), LCTL_T(KC_F),         KC_G,                           KC_H         , RCTL_T(KC_J) , RSFT_T(KC_K), LALT_T(KC_L), RGUI_T(KC_SCLN), KC_QUOT,
-KC_LSFT,         KC_Z,         KC_X,         KC_C,         KC_V,         KC_B, RALT(KC_8),      KC_LT  , KC_N         , KC_M         , KC_COMM     , KC_DOT      , KC_SLSH        , QK_REP ,
-KC_LCTL,      KC_LGUI,      KC_LALT, LSFT(KC_TAB),LSFT_T(KC_TAB),                                                       KC_ENT       , LSFT(KC_ENT), KC_RALT     , KC_NO          , KC_NO  ,
+ KC_ESC, LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F),         KC_G,                           KC_H         , RSFT_T(KC_J) , RCTL_T(KC_K), LALT_T(KC_L), RGUI_T(KC_SCLN), KC_QUOT,
+KC_LSFT,         KC_Z,         KC_X,         KC_C,         KC_V,         KC_B, RALT(KC_8),      KC_LT  , KC_N         , KC_M         , KC_COMM     , KC_DOT      , KC_SLSH        , CW_TOGG ,
+KC_LCTL,      KC_LGUI,      KC_LALT, LSFT(KC_TAB),LSFT_T(KC_TAB),                                                       KC_ENT       , LSFT(KC_ENT), KC_RALT     , QK_AREP          , QK_REP  ,
 
                                                                         DT_PRNT,      DT_UP,      KC_NO  , KC_NO        ,
                                                                                     DT_DOWN,      KC_NO  ,
-                                                   LT(1,KC_SPC), LT(2,KC_EQL),    CW_TOGG,      KC_CAPS, LT(3,KC_PSLS), LT(4,KC_BSPC)
+                                                   LT(1,KC_SPC), LT(2,KC_EQL),    CW_TOGG,      KC_CAPS, LT(4,KC_PSLS), LT(3,KC_BSPC)
 ),
 
 [1] = LAYOUT_ergodox_pretty(
