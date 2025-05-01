@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   TG(6),         KC_Q,         KC_W,         KC_E,         KC_R,         KC_T, RALT(KC_0),      KC_ENT , KC_Y         , KC_U         , KC_I        , KC_O        , KC_P           , KC_LBRC,
  KC_ESC, LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F),         KC_G,                           KC_H         , RSFT_T(KC_J) , RCTL_T(KC_K), LALT_T(KC_L), RGUI_T(KC_SCLN), KC_QUOT,
 KC_LSFT,         KC_Z,         KC_X,         KC_C,         KC_V,         KC_B, RALT(KC_8),      KC_LT  , KC_N         , KC_M         , KC_COMM     , KC_DOT      , KC_SLSH        , CW_TOGG ,
-KC_LCTL,      KC_LGUI,      KC_LALT, LSFT(KC_TAB),LSFT_T(KC_TAB),                                                       KC_ENT       , LSFT(KC_ENT), KC_RALT     , QK_AREP        , QK_REP  ,
+KC_LCTL,      KC_LGUI,      KC_LALT, LSFT(KC_TAB),LT(7, KC_TAB),                                                        KC_ENT       , LSFT(KC_ENT), KC_RALT     , QK_AREP        , QK_REP  ,
 
                                                                         KC_COPY,   KC_PSTE,     DT_UP  , DT_PRNT        ,
                                                                                    KC_UNDO,     DT_DOWN  ,
@@ -73,9 +73,9 @@ KC_TRNS, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,   KC_NO,      KC_NO  , KC_
 
 [3] = LAYOUT_ergodox_pretty(
 KC_NO,      KC_NO,      KC_NO,         KC_NO,      KC_NO,      KC_NO,   KC_NO,      KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO ,
-KC_NO,       KC_1, RALT(KC_0),       KC_BSLS,       KC_4,       KC_6,   KC_NO,      KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO ,
-KC_NO, RALT(KC_3),    KC_RBRC,    RALT(KC_8),       KC_3,       KC_8,                        KC_NO  , KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, KC_NO ,
-KC_NO, RALT(KC_2), RALT(KC_9), LSFT(KC_QUOT), RALT(KC_7), RALT(KC_6),   KC_NO,      KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , QK_REP,
+KC_NO,       KC_1, RALT(KC_0),       KC_6,       KC_4,       KC_BSLS,   KC_NO,      KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO ,
+KC_NO, RALT(KC_3),    KC_RBRC,       KC_8,       KC_3,    RALT(KC_8),                        KC_NO  , KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, KC_NO ,
+KC_NO, RALT(KC_2), RALT(KC_9), RALT(KC_6), RALT(KC_7), LSFT(KC_QUOT),   KC_NO,      KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , QK_REP,
 KC_NO,      KC_NO,      KC_NO,         KC_NO,      KC_NO,                                             KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO ,
 
                                                              KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS,
@@ -117,7 +117,19 @@ KC_TRNS, KC_NO,   KC_NO,   MS_UP,   KC_NO, MS_WHLU, KC_NO,      KC_NO, MS_WHLU, 
                                              KC_NO, KC_NO,      KC_NO, KC_NO  ,
                                                     KC_NO,      KC_NO,
                                     KC_NO,   KC_NO, KC_NO,      KC_NO, KC_NO  , KC_NO
-)
+),
+
+[7] = LAYOUT_ergodox_pretty(
+KC_TRNS, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,   KC_NO,      KC_NO  , KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_NO ,
+  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_TRNS,      KC_TRNS, KC_PPLS, KC_7, KC_8, KC_9, KC_PMNS, KC_NO ,
+  KC_NO, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT,   KC_NO,                        KC_PEQL, KC_4, KC_5, KC_6, KC_PAST, KC_NO ,
+  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_TRNS,      KC_TRNS, KC_0,    KC_1, KC_2, KC_3, KC_PSLS, QK_REP,
+  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                          KC_NO  , KC_0, KC_NO  , KC_NO  , KC_NO ,
+
+                                             KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS,
+                                                      KC_TRNS,      KC_TRNS,
+                                    KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS
+),
 };
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT_ergodox_pretty(
