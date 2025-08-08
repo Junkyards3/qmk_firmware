@@ -44,7 +44,7 @@ KC_LCTL,      KC_LGUI,      KC_LALT, LSFT(KC_TAB),LT(7, KC_TAB),                
 
                                                                         KC_COPY,   KC_PSTE,     DT_UP  , DT_PRNT        ,
                                                                                    KC_UNDO,     DT_DOWN  ,
-                                                   LT(1,KC_SPC), LT(2,KC_EQL),     CW_TOGG,     KC_CAPS, LT(4,KC_PSLS), LT(3,KC_BSPC)
+                                                   LT(1,KC_SPC), LT(2,KC_LT),    CW_TOGG,     KC_CAPS, LT(4,KC_PSLS), LT(3,KC_BSPC)
 ),
 
 [1] = LAYOUT_ergodox_pretty(
@@ -96,7 +96,7 @@ KC_NO,   KC_NO,         KC_NO,      KC_NO,         KC_NO,                       
 ),
 
 [5] = LAYOUT_ergodox_pretty(
-  KC_NO,    KC_1,    KC_2,  KC_3,   KC_4,  KC_5, KC_NO,      KC_NO, KC_6 , KC_7   , KC_8   , KC_9  , KC_0   , KC_TRNS,
+ KC_ESC,    KC_1,    KC_2,  KC_3,   KC_4,  KC_5, KC_NO,      KC_NO, KC_6 , KC_7   , KC_8   , KC_9  , KC_0   , KC_TRNS,
  KC_TAB,    KC_Q,    KC_W,  KC_E,   KC_R,  KC_T, KC_NO,      KC_NO, KC_Y , KC_U   , KC_I   , KC_O  , KC_P   , KC_NO  ,
 KC_CAPS,    KC_A,    KC_S,  KC_D,   KC_F,  KC_G,                    KC_H , KC_J   , KC_K   , KC_L  , KC_SCLN, KC_NO  ,
 KC_LSFT,    KC_Z,    KC_X,  KC_C,   KC_V,  KC_B, KC_NO,      KC_NO, KC_N , KC_M   , KC_COMM, KC_DOT, KC_SLSH, KC_NO  ,
@@ -172,6 +172,18 @@ bool caps_word_press_user(uint16_t keycode) {
         default:
             return false; // Deactivate Caps Word.
     }
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(2, KC_LT):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_LT); // Send KC_DQUO on tap
+                return false;      // Return false to ignore further processing of key
+            }
+            break;
+    }
+    return true;
 }
 
 // Runs whenever there is a layer state change.
