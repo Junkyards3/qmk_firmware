@@ -13,9 +13,9 @@ KC_LSFT,         KC_Z,            KC_X,            KC_C,            KC_V,       
 ),
     [1] = LAYOUT(
 KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                              KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_INS,  KC_HOME, CW_TOGG, KC_CAPS, KC_NO,   KC_NO,
+KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              CW_TOGG, KC_CAPS, KC_DEL,  KC_WSCH, KC_NO,   KC_NO,
 KC_NO,   KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NO,                              KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,   KC_NO,
-KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,            KC_NO,   KC_DEL,  KC_PGDN, KC_PGUP, KC_PSCR, KC_NO,   KC_NO,
+KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,            KC_NO,   QK_REP,  KC_PGDN, KC_PGUP, QK_AREP, KC_NO,   QK_REP,
                   KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   KC_NO
 ),
     [2] = LAYOUT(
@@ -23,7 +23,7 @@ KC_NO,   KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                           
 KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_PPLS, KC_AMPR, KC_ASTR, KC_LPRN, KC_PMNS, KC_NO,
 KC_NO,   KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NO,                              KC_PEQL, KC_DLR,  KC_PERC, KC_CIRC, KC_PAST, KC_NO,
 KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,            KC_NO,   KC_RPRN, KC_EXLM, KC_AT,   KC_HASH, KC_PSLS, KC_NO,
-                  KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_NO,   KC_RPRN, KC_NO
+                  KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_TRNS,          KC_SPC, KC_TRNS, KC_NO,   KC_RPRN, KC_NO
 ),
     [3] = LAYOUT(
 KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,                                                      KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,
@@ -40,11 +40,11 @@ KC_NO,         KC_NO,         KC_NO,         RALT(KC_5),    RALT(KC_MINS), KC_NO
                               KC_NO,         KC_NO,         KC_NO,         KC_TRNS,       KC_TRNS,                      KC_TRNS,       KC_TRNS,       KC_NO,         KC_NO,         KC_NO
 ),
     [5] = LAYOUT(
-KC_NO,   KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_NO,
-KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_PPLS, KC_7,    KC_8,    KC_9,    KC_PMNS, KC_NO,
-KC_NO,   KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NO,                              KC_PEQL, KC_4,    KC_5,    KC_6,    KC_PAST, KC_NO,
-KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,            KC_NO,   KC_0,    KC_1,    KC_2,    KC_3,    KC_PSLS, KC_NO,
-                  KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_NO,   KC_0,    KC_NO
+KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,   KC_NO,
+KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_MPLY, KC_MPRV, KC_MNXT, KC_NO,    KC_NO,   KC_NO,
+KC_NO,   KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NO,                              KC_COPY, KC_PSTE, KC_CUT,  KC_FIND,  KC_NO,   KC_NO,
+KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,            KC_NO,   KC_DEL,  KC_UNDO, KC_AGAIN, KC_NO,   KC_NO,   QK_REP,
+                  KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   KC_NO
 ),
     [6] = LAYOUT(
 KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
@@ -90,7 +90,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(2, KC_LT):
             if (record->tap.count && record->event.pressed) {
-                tap_code16(KC_LT); // Send KC_DQUO on tap
+                tap_code16(KC_LT); // Send KC_LT on tap
                 return false;      // Return false to ignore further processing of key
             }
             break;
@@ -111,7 +111,7 @@ bool oled_task_user(void) {
                 oled_write_ln_P(PSTR("MOUSE"), false);
                 break;
             case 5:
-                oled_write_ln_P(PSTR("HYPR"), false);
+                oled_write_ln_P(PSTR("UTIL"), false);
                 break;
             case 4:
                 oled_write_ln_P(PSTR("PAIRS"), false);
