@@ -35,7 +35,7 @@ KC_NO,         RALT(KC_2),    RALT(KC_9),    RALT(KC_6),    RALT(KC_7),    LSFT(
     [4] = LAYOUT(
 KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,                                                      KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,
 KC_NO,         KC_NO,         KC_NO,         RALT(KC_4),    RALT(KC_EQL),  KC_NO,                                                      KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,
-KC_NO,         KC_BSLS,       LSFT(KC_BSLS), KC_5,          KC_MINS,       KC_NO,                                                      KC_NO,         KC_LSFT,       KC_LCTL,       KC_LALT,       KC_LGUI,       KC_NO,
+KC_NO,         KC_NUBS,       LSFT(KC_NUBS), KC_5,          KC_MINS,       KC_NO,                                                      KC_NO,         KC_LSFT,       KC_LCTL,       KC_LALT,       KC_LGUI,       KC_NO,
 KC_NO,         KC_NO,         KC_NO,         RALT(KC_5),    RALT(KC_MINS), KC_NO,         KC_NO,                        KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,         KC_NO,
                               KC_NO,         KC_NO,         KC_NO,         KC_TRNS,       KC_TRNS,                      KC_TRNS,       KC_TRNS,       KC_NO,         KC_NO,         KC_NO
 ),
