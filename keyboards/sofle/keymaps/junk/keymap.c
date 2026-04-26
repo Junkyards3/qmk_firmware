@@ -13,7 +13,7 @@ KC_LSFT,         KC_Z,            KC_X,            KC_C,            KC_V,       
 ),
     [1] = LAYOUT(
 KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                              KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              CW_TOGG, KC_CAPS, KC_DEL,  KC_WSCH, KC_NO,   KC_NO,
+KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_DEL,  CW_TOGG, KC_CAPS, KC_WSCH, KC_NO,   KC_NO,
 KC_NO,   KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NO,                              KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,   KC_NO,
 KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,            KC_NO,   QK_REP,  KC_PGDN, KC_PGUP, QK_AREP, KC_NO,   QK_REP,
                   KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   KC_NO
